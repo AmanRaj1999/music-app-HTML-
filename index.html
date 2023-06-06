@@ -1,0 +1,277 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Music Player</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+
+      .container {
+        width: 300px;
+        margin: 100px auto;
+        border: 1px solid #ccc;
+      }
+
+      .header {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+      }
+
+      .song-list {
+        margin: 0;
+        padding: 0;
+      }
+
+      .song-item {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .song-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .song-item span {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .player {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .player .controls {
+        display: flex;
+      }
+
+      .player .controls .button {
+        width: 50px;
+      }
+
+      .player .progress {
+        width: 100%;
+        height: 20px;
+        background-color: #ccc;
+      }
+
+      .player .progress .bar {
+        width: 0;
+        height: 100%;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Simple Music Player</h1>
+      </div>
+      <div class="song-list">
+        <div class="song-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Rihanna-Loud-Album-Cover.jpg/300px-Rihanna-Loud-Album-Cover.jpg"
+          />
+          <span>We Found Love</span>
+          <span>Rihanna</span>
+        </div>
+        <div class="song-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Adele_21_Album_Cover.jpg/300px-Adele_21_Album_Cover.jpg"
+          />
+          <span>Someone Like You</span>
+          <span>Adele</span>
+        </div>
+        <div class="song-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Bruno_Mars_-_Unorthodox_Juicy_%28Explicit%29.jpg/300px-Bruno_Mars_-_Unorthodox_Juicy_%28Explicit%29.jpg"
+          />
+          <span>Uptown Funk</span>
+          <span>Mark Ronson featuring Bruno Mars</span>
+        </div>
+      </div>
+      <div class="player">
+        <div class="controls">
+          <button class="button">Play</button>
+          <button class="button">Pause</button>
+          <button class="button">Next</button>
+        </div>
+        <div class="progress">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #1db954;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .song-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .song-item {
+        width: 250px;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .song-item img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .song-item .title {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .song-item .artist {
+        margin-top: 5px;
+        font-style: italic;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .song-item:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+
+      .song-item .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .song-item .buttons button {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .song-item .buttons button:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .play-button {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .play-button:hover {
+        background-color: #333;
+      }
+
+      .forward-button {
+        transform: rotate(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Music App</h1>
+    </header>
+
+    <main>
+      <ul class="song-list">
+        <li class="song-item">
+          <img src="path_to_image1.jpg" alt="Song 1" />
+          <div class="title">Song 1</div>
+          <div class="artist">Artist 1</div>
+          <div class="buttons">
+            <button class="backward-button">&#9664;</button>
+            <button class="play-button">▶</button>
+            <button class="forward-button">&#9654;</button>
+          </div>
+        </li>
+        <li class="song-item">
+          <img src="path_to_image2.jpg" alt="Song 2" />
+          <div class="title">Song 2</div>
+          <div class="artist">Artist 2</div>
+          <div class="buttons">
+            <button class="backward-button">&#9664;</button>
+            <button class="play-button">▶</button>
+            <button class="forward-button">&#9654;</button>
+          </div>
+        </li>
+        <li class="song-item">
+          <img src="path_to_image3.jpg" alt="Song 3" />
+          <div class="title">Song 3</div>
+          <div class="artist">Artist 3</div>
+          <div class="buttons">
+            <button class="backward-button">&#9664;</button>
+            <button class="play-button">▶</button>
+            <button class="forward-button">&#9654;</button>
+          </div>
+        </li>
+        <!-- Add more song items as needed -->
+      </ul>
+    </main>
+  </body>
+</html>
